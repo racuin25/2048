@@ -1,0 +1,310 @@
+.outer-box {
+  width: 600px;
+  height: 600px;
+  /* background: grey; */
+  background: #80808099;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.block {
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.block > .inner {
+  background: lightgrey;
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-btn {
+  display: flex;
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+  flex-direction: column;
+  margin: 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease-in-out;
+  border: none !important;
+  outline: none !important;
+}
+
+.undo-btn {
+  background: url("./undo.svg");
+  background-size: contain;
+}
+
+.refresh-btn {
+  background: url("./restart.svg");
+  background-size: contain;
+}
+
+.grid-btn {
+  background: url("./grid.svg");
+  background-size: contain;
+}
+
+._default {
+  width: 150px;
+  height: 150px;
+}
+
+._grande {
+  width: 120px;
+  height: 120px;
+}
+
+._tall {
+  width: 100px;
+  height: 100px;
+}
+
+._venti {
+  width: 75px;
+  height: 75px;
+  padding: 3px;
+}
+
+.change-grid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffc10775;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.change-grid .box {
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* cursor: pointer; */
+  backdrop-filter: blur(3px);
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.change-grid .box>.option {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.game-reset {
+  padding: 0 20px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.game-reset.option:hover {
+  background-color: black;
+  color: white;
+}
+
+.change-grid .box>.option.selected, .change-grid .box>.option:hover{
+  background-color: black;
+    color: white;
+}
+
+.game-btn:hover {
+  background-color: #fbd4a5;
+}
+
+.block.exists > .inner._2 {
+  background-color: white;
+  color: #757070;
+}
+
+.block.exists > .inner._4 {
+  background-color: #fbf4d8;
+  color: #757070;
+}
+
+.block.exists > .inner._8 {
+  background-color: #f5ba73;
+  color: white;
+}
+
+.block.exists > .inner._16 {
+  background-color: #e08c5f;
+  color: white;
+}
+
+.block.exists > .inner._32 {
+  background-color: #fb774d;
+  color: white;
+}
+
+.block.exists > .inner._64 {
+  background-color: #f44336;
+  color: white;
+}
+
+.block.exists > .inner._128 {
+  background-color: #f5d575;
+  color: white;
+}
+
+.block.exists > .inner._256 {
+  background-color: #ffc107;
+  color: white;
+}
+
+.block.exists > .inner._512 {
+  background-color: #ff9800;
+  color: white;
+}
+
+.block.exists > .inner._1024 {
+  background-color: #ffca28;
+  color: white;
+}
+
+.block.exists > .inner._2048 {
+  background-color: #795548;
+  color: white;
+  /* font-size: 60px; */
+}
+
+.block.exists > .inner._4096 {
+  background-color: #8bc34a;
+  color: white;
+  font-size: 60px;
+}
+
+.game-won {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffc10775;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12vw;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1em;
+  backdrop-filter: blur(3px);
+}
+
+.block._tall{
+  padding: 3px;
+}
+
+.block._venti>.inner._1024, .block._venti>.inner._2048{
+  font-size: 3vw;
+}
+
+@media screen and (max-width: 526px) {
+  .block._tall {
+    width: 16.5vw;
+    height: 16.5vw;
+  }
+
+  .block._venti {
+    width: 12.5vw;
+    height: 12.5vw;
+  }
+
+  .block._venti > .inner {
+    font-size: 9vw;
+  }
+}
+
+
+
+@media screen and (max-width: 764px) {
+  .block._default > .inner {
+    font-size: 13vw;
+  }
+
+  .block._grande > .inner {
+    font-size: 9vw;
+  }
+
+  .block._grande > .inner._1024,.block._grande > .inner._2048 {
+    font-size: 7vw !important;
+  }
+
+  .parent-container {
+    flex-direction: column;
+  }
+
+  .btn-group {
+    order: 0;
+    display: flex;
+  }
+
+  .outer-box {
+    width: 100vw;
+    height: 100vw;
+    max-height: 80vh;
+    max-width: 80vh;
+  }
+
+  .block {
+    width: 25vw;
+    height: 25vw;
+    max-width: 20vh;
+    max-height: 20vh;
+  }
+
+  .block._grande {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .block._default>.inner._1024,
+  .block._default>.inner._2048 {
+    font-size: 7vw!important;
+  }
+
+  .block._venti>.inner{
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 457px) and (max-width: 763px){
+  .block._grande{
+    width: 20%;
+    height: 20%;
+  }
+
+  .block._tall{
+    width: 16.6%;
+    height: 16.6%;
+  }
+
+  .block._venti{
+    width: 12.5%;
+    height: 12.5%;
+  }
+}
